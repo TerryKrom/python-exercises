@@ -55,7 +55,7 @@ while True:
         break
     
     guess = input("Palpite atual: ")
-    guess.lower()
+    guess = guess.lower()
     print('\n')
     
     if len(guess) == 1:
