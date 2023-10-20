@@ -81,4 +81,5 @@ while True:
             break
         else:
             print("Chute errado!")
+            errors+=1
             wordGuesses.append(guess)
