@@ -7,6 +7,11 @@ icons = {
     'shield': '\U0001f6e1\uFE0F'
 }
 
+def pressEnter(func):
+    code = input()
+    if code == '':
+        func()
+
 class Hero:
     def __init__(self, name):
         self.life = 20
@@ -44,14 +49,27 @@ class Monster:
             'armor': 8
         },
     }
+    
     def __init__(self, level):
         self.life = self.levels[level]['life']
         self.damage = self.levels[level]['damage']
         self.armor = self.levels[level]['armor']
         self.name = random.choice(self.levels[level]['names'])
+
+class Dungeon:
+    def __init__(self):
+        print('Dungeon 1')
         
+class Level:
+    def __init__(self):
+        self.dungeon = Dungeon()
+        print('Level started!')
+
 class Game:
     def __init__(self):
+        self.opening()
+        
+    def opening(self):
         print('- Welcome to Text RPG!')
         print()
         print("- Let's begin our adventure")
@@ -68,18 +86,17 @@ class Game:
         print("- You don't remember anything... ")
         print()
         print("Press enter to begin")
-        code = input()
-        if code == '':
-            self.startGame()
+        pressEnter(self.startGame)
     
     def startGame(self):
         self.clear()
         self.printMenu()
         self.createMonster()
         self.printActions()
-        self.heroTurn()
+        self.battle()
         
     def printMenu(self):
+        self.clear()
         name = self.hero.name
         hp = self.hero.life
         damage = self.hero.damage
@@ -115,19 +132,46 @@ class Game:
             self.startGame()
     
     def heroTurn(self):
-        while True:
-            action = input('Choose an action: ')
-            if action in self.hero.actions:
-                if action == 'a':
-                    self.heroAttack()
-                elif action == 'd':
-                    self.heroDefense()
-                elif action == 'i':
-                    self.hero.checkItems()
-                elif action == 'c':
-                    self.checkMonster()
-                elif action == 'r':
-                    self.runAway()
+        action = input('Choose an action: ')
+        if action == 'a':
+            self.heroAttack()
+        elif action == 'd':
+            self.heroDefense()
+        elif action == 'i':
+            self.hero.checkItems()
+        elif action == 'c':
+            self.checkMonster()
+        elif action == 'r':
+            self.runAway()
+            
+    def monsterTurn(self):
+        self.hero.life -= self.monster.damage
+        print(f'Monster Attacked! -{self.monster.damage}')
+    def heroAttack(self):
+        print(f'{self.hero.name} Attacked!')
+        self.monster.life -= self.hero.damage
+    
+    def heroDefense(self):
+        print(f'{self.hero.name} Defended!')
+        self.monster.damage = self.monster.damage/2
+    
+    def runAway(self):
+        if self.monster.life <= 10:
+            print('Escaped!')
+        else:
+            print('Cannot escape!')
+            
+    def battle(self):
+        while self.hero.life > 0 and self.monster.life > 0:
+            self.heroTurn()
+            if self.monster.life <= 0:
+                print(f'{self.hero.name} venceu a batalha!')
                 break
-
+            self.monsterTurn()
+            if self.hero.life <= 0:
+                print(f'{self.monster.name} venceu a batalha!')
+                break
+        print('Press enter to continue')
+        pressEnter(self.printMenu)
+    
 game = Game()
