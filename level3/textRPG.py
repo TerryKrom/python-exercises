@@ -2,7 +2,7 @@ import os
 import random
 
 icons = {
-    'heart': '\u2764\uFE0F',
+    'heart': '\U00002764️ ',
     'swords': '\u2694\uFE0F',
     'shield': '\U0001f6e1\uFE0F'
 }
@@ -14,6 +14,7 @@ def pressEnter(func):
 
 class Hero:
     def __init__(self, name):
+        self.level = 'beginner'
         self.life = 20
         self.damage = 8
         self.armor = 10
@@ -64,9 +65,10 @@ class Level:
     def __init__(self):
         self.dungeon = Dungeon()
         print('Level started!')
-
+        
 class Game:
     def __init__(self):
+        self.inBattle = True
         self.opening()
         
     def opening(self):
@@ -91,10 +93,28 @@ class Game:
     def startGame(self):
         self.clear()
         self.printMenu()
+        self.createLevel()
+    
+    def resumeGame(self):
+        self.clear()
+        self.printMenu()
+        self.resumeLevel()
+        
+    def createLevel(self):
+        self.level = Level()
         self.createMonster()
         self.printActions()
         self.battle()
+        self.inBattle = True
         
+    
+    def resumeLevel(self):
+        print(f'- A {self.monster.name} appears!')
+        self.printActions()
+        self.battle()
+        self.inBattle = True
+        
+            
     def printMenu(self):
         self.clear()
         name = self.hero.name
@@ -102,7 +122,7 @@ class Game:
         damage = self.hero.damage
         armor = self.hero.armor
         print('='*8+f' {name} '+'='*8)
-        stats = f'{icons["heart"]} {hp} {icons["swords"]} {damage}  {icons["shield"]} {armor}'
+        stats = f'{icons["heart"]} {int(hp)} {icons["swords"]} {int(damage)}  {icons["shield"]} {int(armor)}'
         print(stats.center(26, ' '))
         
     def printActions(self):
@@ -110,10 +130,11 @@ class Game:
         actions = self.hero.actions
         for act in actions:
             print(f'[{act[0]}] {act}')
+        print()
         
     def createMonster(self):
         print()
-        self.monster = Monster('beginner')
+        self.monster = Monster(self.hero.level)
         print(f'- A {self.monster.name} appears!')
         
     def clear(self):
@@ -121,36 +142,40 @@ class Game:
     
     def checkMonster(self):
         self.clear()
+        self.inBattle = False
         print('Stats: ')
+        print(f'Name: {self.monster.name}')
         print(f'{icons["heart"]} {self.monster.life}')
         print(f'{icons["swords"]} {self.monster.damage}')
         print(f'{icons["shield"]} {self.monster.armor}')
         print()
         print('Press enter to return')
-        code = input()
-        if code == '':
-            self.startGame()
+        pressEnter(self.resumeGame)
     
     def heroTurn(self):
         action = input('Choose an action: ')
-        if action == 'a':
-            self.heroAttack()
-        elif action == 'd':
-            self.heroDefense()
-        elif action == 'i':
-            self.hero.checkItems()
-        elif action == 'c':
-            self.checkMonster()
-        elif action == 'r':
-            self.runAway()
-            
+        
+        actions = {
+             "a": self.heroAttack,
+             "d": self.heroDefense,
+             "i": self.hero.checkItems,
+             "c": self.checkMonster,
+             "r": self.runAway
+        }
+        
+        if action in actions:
+            actions[action]()
+        
+    e = 0;
+    
     def monsterTurn(self):
         self.hero.life -= self.monster.damage
-        print(f'Monster Attacked! -{self.monster.damage}')
+        print(f'{self.monster.name} Attacked! -{self.monster.damage}')
+        
     def heroAttack(self):
-        print(f'{self.hero.name} Attacked!')
+        print(f'{self.hero.name} Attacked! -{self.hero.damage}')
         self.monster.life -= self.hero.damage
-    
+            
     def heroDefense(self):
         print(f'{self.hero.name} Defended!')
         self.monster.damage = self.monster.damage/2
@@ -158,20 +183,29 @@ class Game:
     def runAway(self):
         if self.monster.life <= 10:
             print('Escaped!')
+            self.e += 1
         else:
             print('Cannot escape!')
             
     def battle(self):
-        while self.hero.life > 0 and self.monster.life > 0:
+        self.e = 0  # Reinicie 'e' no início da batalha
+        while self.inBattle and self.hero.life > 0 and self.monster.life > 0 and self.e == 0:
+            self.resetStats()
             self.heroTurn()
             if self.monster.life <= 0:
-                print(f'{self.hero.name} venceu a batalha!')
+                print('You win!')
                 break
             self.monsterTurn()
             if self.hero.life <= 0:
                 print(f'{self.monster.name} venceu a batalha!')
                 break
+    
         print('Press enter to continue')
+        self.inBattle = False
         pressEnter(self.printMenu)
     
+    def resetStats(self):
+        if self.monster.name in Monster.levels[self.hero.level]["names"]:
+            self.monster.damage = Monster.levels[self.hero.level]["damage"]
+            
 game = Game()
