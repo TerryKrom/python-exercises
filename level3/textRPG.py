@@ -7,17 +7,42 @@ icons = {
     'shield': '\U0001f6e1\uFE0F'
 }
 
+items = {
+    'healing':{
+        'lifegem': {
+            'hp': 25  
+        },
+    }
+}
+
 def pressEnter(func):
     code = input()
     if code == '':
         func()
 
 class Hero:
+    levels = {
+        'beginner': {
+            'life': 20,
+            'damage': 8,
+            'armor': 10
+        },
+        'medium': {
+            'life': 30,
+            'damage': 12,
+            'armor': 15
+        },
+        'advanced': {
+            'life': 40,
+            'damage': 16,
+            'armor': 20
+        }
+    }
     def __init__(self, name):
         self.level = 'beginner'
-        self.life = 20
-        self.damage = 8
-        self.armor = 10
+        self.life = self.levels[self.level]["life"]
+        self.damage = self.levels[self.level]["damage"]
+        self.armor = self.levels[self.level]["armor"]
         self.actions = ["attack", "defense", "items", "check", "run"]
         self.items = {}
         self.name = name
@@ -29,11 +54,37 @@ class Hero:
             for item,c in self.items.items():
                 print(f'{item} {c}x')
             print()
+            while True:
+                print("[i] to use an item")
+                print("[Enter] to return")
+                print()
+                code = input()
+                code = code.lower()
+                if code == 'i':
+                    while True:
+                        item = input("Enter the item name: ")
+                        if item in self.items:
+                            self.useItem(item)
+                            print(f"{item} used!")
+                            break
+                        else:
+                            print("invalid Name!")
+                        break
+                else:
+                    break
+            
         else:
             print('Empty bag!')
         
         self.itemsChecked = True
-        
+    
+    def useItem(self, item):
+        for item_type, item_data in items.items():
+            if item in item_data:
+                self.life += item_data[item]["hp"]
+                print(f"+{item_data[item]['hp']} HP")
+                del self.items[item]  # Remova o item do inventário após o uso
+                
 class Monster:
     levels = {
         'beginner': {
@@ -64,20 +115,21 @@ class Monster:
 
 class Dungeon:
     def __init__(self):
-        print('Dungeon 1')
+        self.current = 1
         
 class Level:
     def __init__(self):
         self.dungeon = Dungeon()
-        print('Level started!')
         
 class Game:
     def __init__(self):
-        self.inBattle = True
+        self.escaped = 0;
+        self.inBattle = False
         self.part = 1
         self.parts = {
             1: self.partOne,
-            2: self.partTwo
+            2: self.partTwo,
+            3: self.partThree,
         }
         self.opening()
         
@@ -107,6 +159,7 @@ class Game:
         
     def createLevel(self):
         self.level = Level()
+        print("Dungeon", self.level.dungeon.current)
         self.createMonster()
         self.printActions()
         self.inBattle = True
@@ -114,6 +167,8 @@ class Game:
         
     
     def resumeLevel(self):
+        print("Dungeon", self.level.dungeon.current)
+        print()
         print(f'- A {self.monster.name} appears!')
         self.printActions()
         self.inBattle = True
@@ -130,6 +185,7 @@ class Game:
         print(padName.center(26, '='))
         stats = f'{icons["heart"]} {int(hp)} {icons["swords"]} {int(damage)}  {icons["shield"]} {int(armor)}'
         print(stats.center(26, ' '))
+        print()
         
     def printActions(self):
         print()
@@ -174,8 +230,6 @@ class Game:
         if action in actions:
             actions[action]()
         
-    escaped = 0;
-    
     def monsterTurn(self):
         self.hero.life -= self.monster.damage
         print(f'{self.monster.name} Attacked! -{self.monster.damage}')
@@ -196,29 +250,32 @@ class Game:
             print('Cannot escape!')
             
     def battle(self):
-        self.escaped = 0  # Reinicie 'e' no início da batalha
+        self.escaped = 0  # Reinicie 'escaped' no início da batalha
         while self.inBattle and self.hero.life > 0 and self.monster.life > 0 and self.escaped == 0:
             self.resetStats()
             self.heroTurn()
             if self.monster.life <= 0 or self.escaped == 1:
                 print('You win!')
+                
                 self.hero.life+=self.hero.life/4
-                print('Press enter to continue')
                 self.inBattle = False
                 self.part+=1
+                
                 if self.part not in self.parts:
                     print("Dungeon completed!")
+                    self.bossFight()
                     break
-                else:
+                elif self.part in self.parts:
+                    print('Press enter to continue')
                     pressEnter(self.parts[self.part])
                     break
+                
             if not self.hero.itemsChecked:
                 self.monsterTurn()
             if self.hero.life <= 0:
                 print(f'{self.monster.name} venceu a batalha!')
                 self.gameOver()
                 break
-    
     
     def gameOver(self):
         self.clear()
@@ -248,5 +305,14 @@ class Game:
         pressEnter(self.clear)
         self.printMenu()
         self.createLevel()
-        
+    
+    def partThree(self):
+        self.clear()
+        self.printMenu()
+        self.createLevel()
+    
+    def bossFight(self):
+        self.clear()
+        self.printMenu()
+        print("Boss fight reached")
 game = Game()
