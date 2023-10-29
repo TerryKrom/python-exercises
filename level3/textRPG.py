@@ -86,6 +86,8 @@ def pressEnter(func):
     code = input()
     if code == '':
         func()
+    else:
+        pressEnter(func)
 
 # the main character class
 
@@ -194,6 +196,20 @@ class Monster:
         self.armor = self.levels[level]['armor']
         self.name = random.choice(self.levels[level]['names'])
 
+class Boss:
+    bosses = {
+        'troll': {
+            'life': 20,
+            'damage': 8,
+            'armor': 10
+        }
+    }
+    
+    def __init__(self, name):
+        self.name = name
+        self.life = self.bosses[name]['life']
+        self.damage = self.bosses[name]['damage']
+        self.armor = self.bosses[name]['armor']
 # the dungeon class
 
 class Dungeon:
@@ -455,8 +471,13 @@ class Game:
         self.printMenu()
         self.createLevel()
     
+    
+    def createBoss(self):
+        self.boss = Boss('troll')
+        print(f"{self.boss.name}".center(26, '='))
     def bossFight(self):
         self.clear()
         self.printMenu()
+        self.createBoss()
         print("Boss fight reached")
 game = Game()
