@@ -71,8 +71,11 @@ monsters = {
 items = {
     'healing':{
         'lifegem': {
-            'hp': 25  
+            'hp': 15  
         },
+        'health potion': {
+            'hp': 25
+        }
     }
 }
 
@@ -142,6 +145,11 @@ class Hero:
     
         else:
             print('Empty bag!')
+            print('[Enter] to return')
+            while True:
+                code = input()
+                if code == '':
+                    break
     
         self.itemsChecked = True
 
@@ -198,6 +206,15 @@ class Level:
     def __init__(self):
         self.dungeon = Dungeon()
 
+# function to get the corret name length
+def getHeroName(prompt):
+    while True:
+        user_input = input(prompt)
+        if len(user_input) <= 10:
+            return user_input
+        else:
+            print("This name is too big! [Limit: 10 digits]")
+
 # the main game class
 
 class Game:
@@ -226,7 +243,7 @@ class Game:
             print("- Let's begin our adventure")
             print("- What is the name of our hero? ")
             print()
-            name = input('Your answer: ')
+            name = getHeroName("Your answer: ")
             if name == '':
                 name = 'Hero'
             self.clear()
