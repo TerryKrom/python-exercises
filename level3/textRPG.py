@@ -7,21 +7,35 @@ icons = {
     'shield': '\U0001f6e1\uFE0F'
 }
 
+title = '''
+  _____ _____ _____ _____ _____ _____ _____  
+ |_____|_____|_____|_____|_____|_____|_____| 
+(_)_____         _     ____  ____   ____  (_)
+| |_   _|____  _| |_  |  _ \|  _ \ / ___| | |
+| | | |/ _ \ \/ / __| | |_) | |_) | |  _  | |
+| | | |  __/>  <| |_  |  _ <|  __/| |_| | | |
+| | |_|\___/_/\_\\__|  |_| \_\_|    \____| | |
+|_|                                       |_|
+(_)____ _____ _____ _____ _____ _____ ____(_)
+ |_____|_____|_____|_____|_____|_____|_____| 
+ '''
+# The monsters visual resource
 monsters = {
-    'rat': '''⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠀⠀⠀⠀⠀⢄⣆⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣏⣉⣶⠴⠖⣤⠤⠽⠶⠦⣄
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢴⢛⠻⢝⡆⠀⠀⢿⠇⠀⣴⣰⠗
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⡤⠶⠶⠖⠋⠚⠛⠿⠃⠀⠀⠀⢀⡴⣿⠙⣣
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡤⠛⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⠘⠘⠀⠁
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠞⠁⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡼⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⢧⡀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣰⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⢿⣄⡀⠺⢬⡳⣿⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠃⠈⠳⡾⠃⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣀⠼⠀⣠⡄⠀⠀⠀⠀⠀⣠⡴⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⣀⣀⣀⣀⣀⣤⣤⢤⣶⣒⣚⣋⣉⡉⠤⠤⠺⠟⣧⠀⠀⣀⣴⠾⢉⣀⠀⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠈⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠿⣆⡻⢤⣀⣉⠓⠒⠒⠎⠙⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠶⠾⠿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-''',
+    'rat': '''⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣶⣶⣦⡴⢶⣶⣶⣆⠸⠿⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⣻⣿⣷⣾⣿⣿⡿⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣤⠄⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣾⣿⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⣿⣿⣿⠿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣟⠛⠻⣿⣿⣿⣿⣦⡈⠉⠛⠻⡆⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣦⡈⢻⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣧⠈⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⢀⣀⡀⠸⣿⣿⣿⣿⣟⣀⣉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⣾⡿⠟⠛⠀⠉⠛⠛⠛⠛⠛⠛⠛⠛⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⢿⣧⣀⠀⠀⠀⠀⢀⣀⣠⣤⠶⠶⠶⠶⢶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠈⠉⠛⠛⠛⠛⠉⠉⠀⠀⠀⠀⠀⣀⡼⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀''',
     'goblin': '''
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -52,6 +66,8 @@ monsters = {
 ⠀⢀⣼⡀⠀⠀⠈⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⠃⠀
 '''
 }
+
+# dict of all items used in the game
 items = {
     'healing':{
         'lifegem': {
@@ -60,12 +76,18 @@ items = {
     }
 }
 
+# functions created to decrease writing the same code
+# receive an function as parameter, and execute after press enter
+
 def pressEnter(func):
     code = input()
     if code == '':
         func()
 
+# the main character class
+
 class Hero:
+    # a dictionary with all 3 levels stats for the hero, hp, damage and armor
     levels = {
         'beginner': {
             'life': 20,
@@ -91,7 +113,9 @@ class Hero:
         self.actions = ["attack", "defense", "items", "check", "run"]
         self.items = {}
         self.name = name
-        
+    
+    # function to view all items in the hero bag and use them
+    
     def checkItems(self):
         if len(self.items) > 0:
             print(" Items ".center(26, '='))
@@ -121,14 +145,20 @@ class Hero:
     
         self.itemsChecked = True
 
+    # function to use the item, receive an item as parameter
+    # realize the item effect
+    
     def useItem(self, item):
         for item_type, item_data in items.items():
             if item in item_data:
                 self.life += item_data[item]["hp"]
                 print(f"+{item_data[item]['hp']} HP")
                 del self.items[item]  # Remova o item do inventário após o uso
-                
+
+# class for all monsters in the game
+
 class Monster:
+    # a dictionary with the stats of the monster for each level
     levels = {
         'beginner': {
             'names': ['slime', 'goblin', 'rat'],
@@ -156,14 +186,20 @@ class Monster:
         self.armor = self.levels[level]['armor']
         self.name = random.choice(self.levels[level]['names'])
 
+# the dungeon class
+
 class Dungeon:
     def __init__(self):
         self.current = 1
-        
+
+# the level class, use the dungeon class inside
+
 class Level:
     def __init__(self):
         self.dungeon = Dungeon()
-        
+
+# the main game class
+
 class Game:
     def __init__(self):
         self.escaped = 0;
@@ -176,34 +212,44 @@ class Game:
             3: self.partThree,
         }
         self.opening()
-        
-    def opening(self):
-        print('- Welcome to Text RPG!')
-        print()
-        print("- Let's begin our adventure")
-        print("- What is the name of our hero? ")
-        print()
-        name = input('Your answer: ')
-        if name == '':
-            name = 'Hero'
-        self.clear()
-        print(f"Wonderful! nice to meet you, {name}")
-        self.hero = Hero(name)
-        print('- So...')
-        print('- You will start your journey, lost inside of a cave')
-        print("- You don't remember anything... ")
-        print()
-        print("Press [enter} to begin")
-        pressEnter(self.parts[self.part])
     
+    # function that exhibits all the game opening
+    # also get the hero name and starts the game
+    
+    def opening(self):
+        print(title)
+        print()
+        print(' Press [enter] to start '.center(43, '-'))
+        code = input()
+        if code == '':
+            self.clear()
+            print("- Let's begin our adventure")
+            print("- What is the name of our hero? ")
+            print()
+            name = input('Your answer: ')
+            if name == '':
+                name = 'Hero'
+            self.clear()
+            print(f"Wonderful! nice to meet you, {name}")
+            self.hero = Hero(name)
+            print('- So...')
+            print('- You will start your journey, lost inside of a cave')
+            print("- You don't remember anything... ")
+            print()
+            print("Press [enter} to begin")
+            pressEnter(self.parts[self.part])
+        
+    # function to resume the game after pause to check monster or item
     def resumeGame(self):
         self.clear()
         self.printMenu()
         self.resumeLevel()
     
+    # function to print the current dungeon and avoid repeated code
     def printDungeon(self):
         print("- Dungeon", self.level.dungeon.current)
         
+    # function to create and inicialize the next level
     def createLevel(self):
         self.level = Level()
         self.printDungeon()
@@ -212,7 +258,7 @@ class Game:
         self.inBattle = True
         self.battle()
         
-    
+    # function used in "resumeGame" function, to return to game
     def resumeLevel(self):
         self.printDungeon()
         print(f'- A {self.monster.name} appears!')
@@ -220,10 +266,10 @@ class Game:
         self.inBattle = True
         self.battle()
         
-            
+    #function who stores all the game stats and exhibits it
     def printMenu(self):
         self.clear()
-        name = self.hero.name
+        name = self.hero.name.capitalize()
         hp = self.hero.life
         damage = self.hero.damage
         armor = self.hero.armor
@@ -235,7 +281,8 @@ class Game:
         print(padName.center(26, '='))
         print(stats.center(29, ' '))
         print("=".center(26, '='))
-        
+     
+     # print the player actions menu  
     def printActions(self):
         print()
         actions = self.hero.actions
@@ -243,15 +290,18 @@ class Game:
             print(f'[{act[0]}] {act}')
         print()
         
+    # function to create and store a monster in the game
     def createMonster(self):
         print()
         self.monster = Monster(self.hero.level)
         self.showMonster()
         print(f'- A {self.monster.name} appears!')
-        
+    
+    # function to clear the console
     def clear(self):
         os.system('cls' if os.name == 'nt' else 'clear')
     
+    # exhibits the current monster stats
     def checkMonster(self):
         self.clear()
         self.inBattle = False
@@ -265,6 +315,7 @@ class Game:
         print('Press [enter} to return')
         pressEnter(self.resumeGame)
     
+    # gets the player action and execute it
     def heroTurn(self):
         self.hero.itemsChecked = False
         
@@ -281,11 +332,13 @@ class Game:
         
         if action in actions:
             actions[action]()
-        
+            
+    # function to monster action         
     def monsterTurn(self):
         self.hero.life -= self.monster.damage
         self.lastActions.append(f'{self.monster.name} Attacked! -{self.monster.damage}')
-        
+    
+    # >> All player actions
     def heroAttack(self):
         self.lastActions.append(f'{self.hero.name} Attacked! -{self.hero.damage}')
         self.monster.life -= self.hero.damage
@@ -301,6 +354,7 @@ class Game:
         else:
             self.lastActions.append('Cannot escape!')
     
+    # refresh the game layout
     def showGameLayout(self, actions):
         self.clear()
         self.printMenu()
