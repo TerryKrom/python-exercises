@@ -8,39 +8,39 @@ class Bank:
         os.system('cls' if os.name == 'nt' else 'clear')
     
     def display_menu(self):
-        print("Bem-vindo ao Banco Python!")
-        print("Escolha uma opção:")
-        print("1. Verificar saldo")
-        print("2. Depositar dinheiro")
-        print("3. Sacar dinheiro")
-        print("4. limpar tela")
-        print("5. Sair")
+        print("Welcome to python Bank!")
+        print("Choose and option:")
+        print("1. Check Balance")
+        print("2. Make a Deposit")
+        print("3. Withdraw")
+        print("4. Clear the Screen")
+        print("5. Quit")
 
     def check_balance(self):
-        print(f"Seu saldo atual é: ${self.balance:.2f}")
+        print(f"Your balance is: ${self.balance:.2f}")
 
     def deposit(self):
-        amount = float(input("Digite o valor a ser depositado: $"))
+        amount = float(input("Enter the value: $"))
         if amount > 0:
             self.balance += amount
-            print(f"Você depositou ${amount:.2f}")
+            print(f"You entered ${amount:.2f}")
             self.check_balance()
         else:
-            print("Quantidade inválida. O depósito deve ser maior que zero.")
+            print("Invalid quantity. The deposit must be greater than zero.")
 
     def withdraw(self):
-        amount = float(input("Digite o valor a ser sacado: $"))
+        amount = float(input("Enter the amount to be withdrawn: $"))
         if 0 < amount <= self.balance:
             self.balance -= amount
-            print(f"Você sacou ${amount:.2f}")
+            print(f"You withdrawn ${amount:.2f}")
             self.check_balance()
         else:
-            print("Saldo insuficiente ou quantidade inválida.")
+            print("Insufficient balance or invalid quantity.")
 
     def run(self):
         while True:
             self.display_menu()
-            choice = int(input("Escolha uma opção (1/2/3/4/5): "))
+            choice = int(input("Choose and option (1/2/3/4/5): "))
             
             actions = {
                 1: self.check_balance,
@@ -55,6 +55,5 @@ class Bank:
             
             actions[choice]()
             
-if __name__ == "__main__":
-    bank = Bank()
-    bank.run()
+bank = Bank()
+bank.run()

@@ -8,45 +8,44 @@ class UnitConverter:
         }
 
     def display_menu(self):
-        print("Selecione a conversão desejada:")
-        print("1. Converter de kg para g")
-        print("2. Converter de horas para minutos")
-        print("3. Converter de litros para ml")
-        print("4. Sair")
+        print("Select the desired conversion:")
+        print("1. Convert from kg to g")
+        print("2. Convert from hours to minutes")
+        print("3. Convert from liters to ml")
+        print("4. Quit")
 
     def kg_to_g(self):
-        kg = float(input("Digite a quantidade em quilogramas (kg): "))
+        kg = float(input("Enter the amount in kilograms (kg): "))
         g = kg * 1000
-        print(f"{kg} kg é igual a {g} gramas (g)")
+        print(f"{kg} kg is equal to {g} grams (g)")
 
     def hours_to_minutes(self):
-        hours = float(input("Digite a quantidade em horas: "))
+        hours = float(input("Enter the amount in hours: "))
         minutes = hours * 60
-        print(f"{hours} horas é igual a {minutes} minutos")
+        print(f"{hours} hours is equal to {minutes} minutes")
 
     def liters_to_ml(self):
-        liters = float(input("Digite a quantidade em litros (L): "))
+        liters = float(input("Enter the amount in liters (L): "))
         ml = liters * 1000
-        print(f"{liters} litros é igual a {ml} mililitros (mL)")
+        print(f"{liters} liters is equal to {ml} milliliters (mL)")
 
     def quit(self):
-        print("Obrigado por usar o conversor. Adeus!")
+        print("Thank you for using the converter. Goodbye!")
 
     def run(self):
         while True:
             self.display_menu()
-            choice = input("Escolha uma opção (1/2/3/4): ")
+            choice = input("Choose an option (1/2/3/4): ")
 
             try:
                 choice = int(choice)
                 if choice in self.choices:
                     self.choices[choice]()
                 else:
-                    print("Opção inválida. Escolha uma opção válida.")
+                    print("Invalid option. Choose a valid option.")
             except ValueError:
-                print("Opção inválida. Escolha um número de opção válido.")
+                print("Invalid option. Choose a valid option.")
 
 
-if __name__ == "__main__":
-    converter = UnitConverter()
-    converter.run()
+converter = UnitConverter()
+converter.run()
