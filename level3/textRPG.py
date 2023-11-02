@@ -21,25 +21,26 @@ title = '''
  '''
 # The monsters visual resource
 monsters = {
-    'rat': '''⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣶⣶⣦⡴⢶⣶⣶⣆⠸⠿⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⣻⣿⣷⣾⣿⣿⡿⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣤⠄⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣾⣿⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⣿⣿⣿⠿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
+    
+'rat': '''
+      ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣶⣶⣦⡴⢶⣶⣆⠸⠿⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⣻⣿⣷⣾⣿⣿⡿⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣤⠄⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⠀⠀⠀⣀⣤⣶⣾⣿⣿⣿⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀
+    ⠀⠀⠀⠀⠀⢀⣴⣾⣿⣿⣿⣿⣿⠿⣿⣿⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⢠⣾⣿⣿⣿⣿⣿⣿⣿⠀⣿⣿⣄⡀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣟⠛⠻⣿⣿⣿⣿⣦⡈⠉⠛⠻⡆⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣦⡈⢻⣿⣿⣿⠇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣿⣿⣿⣿⣦⡈⢻⣿⣿⣿⠇⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⢿⣿⣿⣿⣿⣧⠈⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⢀⣀⡀⠸⣿⣿⣿⣿⣟⣀⣉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⣾⡿⠟⠛⠀⠉⠛⠛⠛⠛⠛⠛⠛⠛⠂⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⢿⣧⣀⠀⠀⠀⠀⢀⣀⣠⣤⠶⠶⠶⠶⢶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠈⠉⠛⠛⠛⠛⠉⠉⠀⠀⠀⠀⠀⣀⡼⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀
-    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀''',
+    ''', 
     'goblin': '''
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⢀⡼⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀
+          ⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠢⣤⣀⡀⠀⠀⠀⢿⣧⣄⡉⠻⢿⣿⣿⡿⠟⢉⣠⣼⡿⠀⠀⠀⠀⣀⣤⠔⠀
 ⠀⠀⠈⢻⣿⣶⠀⣷⠀⠉⠛⠿⠶⡴⢿⡿⢦⠶⠿⠛⠉⠀⣾⠀⣶⣿⡟⠁⠀⠀
 ⠀⠀⠀⠀⠻⣿⡆⠘⡇⠘⠷⠠⠦⠀⣾⣷⠀⠴⠄⠾⠃⢸⠃⢰⣿⠟⠀⠀⠀⠀
@@ -49,7 +50,7 @@ monsters = {
 ⠀⠀⠀⠀⠀⠀⠀⠈⢻⣦⡀⠃⠀⣿⡆⢰⣿⠀⠘⢀⣴⡟⠁⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣿⣦⡀⠘⠇⠸⠃⢀⣴⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣷⣄⣠⣾⣿⡿⠃⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⣿⣿⠟⠋⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠻⣿⣿⠟⠋
     ''',
     'slime': '''
         
@@ -185,7 +186,10 @@ class Hero:
             if item in item_data:
                 self.life += item_data[item]["hp"]
                 print(f"+{item_data[item]['hp']} HP")
-                del self.items[item]  # Remova o item do inventário após o uso
+                if self.items[item] == 0:
+                    del self.items[item]  # Remova o item do inventário após o uso
+                else:
+                    self.items[item] -= 1
 
 # class for all monsters in the game
 
@@ -311,26 +315,37 @@ class Game:
         print(title)
         print()
         print(' Press [enter] to start '.center(43, '-'))
-        code = input()
-        if code == '':
-            self.clear()
-            print("- Let's begin our adventure")
-            print("- What is the name of our hero? ")
-            print()
-            name = getHeroName("Your answer: ")
-            if name == '':
-                name = 'Hero'
-            self.clear()
-            print(f"Wonderful! nice to meet you, {name}")
-            self.hero = Hero(name)
-            print('- So...')
-            print('- You will start your journey, lost inside of a cave')
-            print("- You don't remember anything... ")
-            print()
-            print("Press [enter} to begin")
-            pressEnter(self.parts[self.part])
         
-    # function to resume the game after pause to check monster or item
+        pressEnter(self.clear)
+        
+        print('- You wake up in a dark, cold, and damp place with only the distant')
+        print('  echo of water droplets dripping in the depths of a cave.')
+        print()
+        pressEnter(self.clear)
+        
+        print('- Your mind is blank, with no memory of who you are \n  or how you ended up in this gloomy place.')
+        print()
+        pressEnter(self.clear)
+        
+        print('- Disoriented and frightened, you feel an urgent need to find answers \n  because something tells you that your life depends on it...')
+        print()
+        pressEnter(self.clear)
+        
+        print("- As you explore the dark walls of the cave, you come across a small opening.")
+        print("- Inside it, a faint light illuminates an aged piece of paper.") 
+        print("- When you pick it up, you notice it's a letter. With trembling hands, you unfold it, and at that moment, the words:") 
+        print()
+        name = getHeroName("Your name is: ")
+        if name == '':
+            name = 'Hero'
+        self.clear()
+        self.hero = Hero(name)
+        
+        print()
+        print("Press [enter} to begin")
+        pressEnter(self.parts[self.part])
+        # function to resume the game after pause to check monster or item
+    
     def resumeGame(self):
         self.clear()
         self.printMenu()
@@ -363,7 +378,11 @@ class Game:
         print(f'- A {self.monster.name} appears!')
         self.printActions()
         self.inBattle = True
-        self.showBossLayout()
+        if self.inBoss:
+            self.showBossLayout(self.lastActions)
+        else:
+            self.showGameLayout(self.lastActions)
+        
         self.battle()
         
     #function who stores all the game stats and exhibits it
@@ -423,20 +442,30 @@ class Game:
              "r": self.runAway
         }
         
+        if action == '':
+            self.heroTurn()
+            
         if action in actions:
             actions[action]()
             
     # function to monster action         
     def monsterTurn(self):
-        self.hero.life -= self.monster.damage
-        self.lastActions.append(f'{self.monster.name} Attacked! -{self.monster.damage}')
+        if self.boss:
+            damage = [self.boss.damage, self.boss.damage+1, self.boss.damage+2]
+            currentDamage = random.choice(damage)
+            self.hero.life -= currentDamage
+            self.lastActions.append(f'{self.monster.name} Attacked! -{currentDamage}')
+        else:
+            self.hero.life -= self.monster.damage
+            self.lastActions.append(f'{self.monster.name} Attacked! -{self.monster.damage}')
     
     # >> All player actions << #
     def heroAttack(self):
         self.lastActions.append(f'{self.hero.name} Attacked! -{self.hero.damage}')
-        self.monster.life -= self.hero.damage
         if self.inBoss:
             self.boss.life -= self.hero.damage
+        else:
+            self.monster.life -= self.hero.damage
             
     def heroDefense(self):
         self.lastActions.append(f'{self.hero.name} Defended!')
@@ -472,8 +501,10 @@ class Game:
         print()
         self.showMonster()
         print(f'- A {self.monster.name} appears')
-        print()
         self.printActions()
+        if len(actions) > 4:
+            actions.pop(0)
+        
         for act in actions:
             print(act)
         print()
@@ -483,6 +514,9 @@ class Game:
         self.printMenu()
         self.showBoss()
         self.printActions()
+        if len(actions) > 4:
+            actions.pop(0)
+        
         for act in actions:
             print(act)
         print()
@@ -505,8 +539,20 @@ class Game:
     def showMonster(self):
         if self.monster.name in monsters:
             print(monsters[self.monster.name].ljust(30, ' '))
+    
+    def showWinMessage(self):
+        self.clear()
+        self.printMenu()
+        self.printDungeon()
+        print()
+        self.showMonster()
+        print()
+        print('You win!')
+        lifeEarned = self.hero.levels[self.hero.level]["life"] / 5
+        self.hero.life +=  lifeEarned
+        print(f'+{int(lifeEarned)} HP!')
+        print()
         
-
     def battle(self):
         self.escaped = 0  # Reinicie 'escaped' no início da batalha
         while self.inBattle or self.inBoss and self.hero.life > 0 and self.monster.life > 0 and self.escaped == 0:
@@ -519,10 +565,7 @@ class Game:
             
             # when you escape or kill the monster, the battle ends
             if self.monster.life <= 0 or self.escaped == 1:
-                print('You win!')
-                lifeEarned = self.hero.levels[self.hero.level]["life"] / 5
-                self.hero.life +=  lifeEarned
-                print(f'+{lifeEarned}HP!')
+                self.showWinMessage()
                 self.inBattle = False
                 self.part += 1
                 self.lastActions = []
@@ -544,6 +587,7 @@ class Game:
                         print(f"{self.monster.name} killed!")
                         print("Press [Enter] to continue")
                         pressEnter(self.gameOver)
+                        break
                         break
                     
                 # if yout current part is in the game parts, the game continues
@@ -578,17 +622,24 @@ class Game:
     # ==> STAGE FUNCTIONS <== #
     def partOne(self):
         self.clear()
+        print()
+        print("- After wake up and recover your sights")
+        print("- You hear noises coming from behind a rock...")
+        print()
+        print('Press [enter} to continue')
+        pressEnter(self.clear)
         self.printMenu()
         self.createLevel()
     
     def partTwo(self):
         self.clear()
         if self.monster.life <= 0:
+            print()
             print(f'- After killing the {self.monster.name}')
             print('- you found an strange object in the body...')
             print('- you have found a lifegem!')
             self.hero.items['lifegem'] = 1
-        
+        print()
         print("- nice! you have killed your first monster")
         print("- Lets continue exploring the cave...")
         
@@ -600,6 +651,13 @@ class Game:
     
     def partThree(self):
         self.clear()
+        print(f'- After killing the {self.monster.name}')
+        print('- you found an strange object in the body...')
+        print('- you have found a lifegem!')
+        self.hero.items['lifegem'] += 1
+        print()
+        print('Press [enter} to continue')
+        pressEnter(self.clear)
         self.printMenu()
         self.createLevel()
     
