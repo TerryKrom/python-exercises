@@ -21,8 +21,7 @@ title = '''
  '''
 # The monsters visual resource
 monsters = {
-    
-'rat': '''
+    'rat': '''
       ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠠⣶⣶⣦⡴⢶⣶⣆⠸⠿⠀⠀⠀
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⣻⣿⣷⣾⣿⣿⡿⠀⠀⠀⠀
     ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣴⣿⣿⣿⣿⣤⠄⠀⠀⠀⠀⠀⠀⠀
@@ -66,7 +65,7 @@ monsters = {
 ⠀⠀⣾⡿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣷⣄⠀⠀
 ⠀⢀⣼⡀⠀⠀⠈⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⠃⠀
     ''',
-    'knight':'''
+    'knight': '''
             {}
            .--.
          ./.--.\.
@@ -103,7 +102,7 @@ items = {
 }
 
 # functions created to decrease writing the same code
-# receive an function as parameter, and execute after press enter
+# receive a function as parameter, and execute after press enter
 
 def pressEnter(func):
     code = input()
@@ -294,7 +293,7 @@ def getHeroName(prompt):
 
 class Game:
     def __init__(self):
-        self.escaped = 0;
+        self.escaped = 0
         self.inBattle = False
         self.inBoss = False
         self.bossesKilled = []
@@ -588,14 +587,12 @@ class Game:
                         print("Press [Enter] to continue")
                         pressEnter(self.gameOver)
                         break
-                        break
                     
                 # if yout current part is in the game parts, the game continues
                 elif self.part in self.parts:
                     print('Press [enter} to continue')
                     pressEnter(self.parts[self.part])
                     break
-
             # the monster will not attack the player after check his items
             if not self.hero.itemsChecked:
                 self.monsterTurn()
