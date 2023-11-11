@@ -459,13 +459,13 @@ class Game:
             act = random.choice(acts)
             bossActions[act]()
         else:
-            damage = int((self.monster.damage - self.hero.armor*0.25))
+            damage = int((self.monster.damage - self.hero.armor*0.10))
             self.hero.life -= damage
             self.lastActions.append(f'{self.monster.name} Attacked! -{damage}')
     
     # >> All player actions << #
     def heroAttack(self):
-        damage = int(self.hero.damage - self.monster.armor*0.25)
+        damage = int(self.hero.damage - self.monster.armor*0.10)
         self.lastActions.append(f'{self.hero.name} Attacked! -{damage}')
         if self.inBoss:
             self.boss.life -= damage
