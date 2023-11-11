@@ -251,21 +251,23 @@ class Boss:
         self.bosses[self.name]["actions"][act] = func
     
     def shieldbash(self):
-        self.game.hero.life -= self.game.boss.damage/2
+        damage = int(self.game.boss.damage/2)
+        self.game.hero.life -= damage
         self.game.boss.armor += 4
-        act = f"{self.name} uses Shield Bash!"
+        act = f"{self.name} uses Shield Bash! -{damage}HP\n- armor increased!"
         self.game.lastActions.append(act)
         pass
     
     def punch(self):
-        self.game.hero.life -= self.game.boss.damage
-        act = f"{self.name} uses Punch!"
+        damage = int(self.game.boss.damage+2)
+        self.game.hero.life -= damage
+        act = f"{self.name} uses Punch! -{damage}HP"
         self.game.lastActions.append(act)
         pass
         
     def defense(self):
         self.game.hero.damage = self.game.hero.damage/2
-        act = f"{self.name} defended yourself!"
+        act = f"{self.name} defended yourself! -{int(self.game.hero.damage/2*2)}ATK"
         self.game.lastActions.append(act)
         pass
     
@@ -457,16 +459,18 @@ class Game:
             act = random.choice(acts)
             bossActions[act]()
         else:
-            self.hero.life -= self.monster.damage
-            self.lastActions.append(f'{self.monster.name} Attacked! -{self.monster.damage}')
+            damage = int((self.monster.damage - self.hero.armor*0.25))
+            self.hero.life -= damage
+            self.lastActions.append(f'{self.monster.name} Attacked! -{damage}')
     
     # >> All player actions << #
     def heroAttack(self):
-        self.lastActions.append(f'{self.hero.name} Attacked! -{self.hero.damage}')
+        damage = int(self.hero.damage - self.monster.armor*0.25)
+        self.lastActions.append(f'{self.hero.name} Attacked! -{damage}')
         if self.inBoss:
-            self.boss.life -= self.hero.damage
+            self.boss.life -= damage
         else:
-            self.monster.life -= self.hero.damage
+            self.monster.life -= damage
             
     def heroDefense(self):
         self.lastActions.append(f'{self.hero.name} Defended!')
