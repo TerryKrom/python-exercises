@@ -132,7 +132,7 @@ class Hero:
             'armor': 20
         }
     }
-    def __init__(self, name):
+    def __init__(self, name, game):
         self.level = 'beginner'
         self.life = self.levels[self.level]["life"]
         self.damage = self.levels[self.level]["damage"]
@@ -140,13 +140,16 @@ class Hero:
         self.actions = ["attack", "defense", "items", "check", "run"]
         self.items = {}
         self.name = name
+        self.game = game
     
     # function to view all items in the hero bag and use them
     
     def checkItems(self):
+        self.game.clear()
+        print(" Items ".center(26, '='))
+        print()
+            
         if len(self.items) > 0:
-            print(" Items ".center(26, '='))
-            print()
             for item, count in self.items.items():
                 print(f'{item} {count}x')
             print()
@@ -165,15 +168,13 @@ class Hero:
                     else:
                         print("Invalid Name!")
                 else:
+                    self.game.resumeGame()
                     break
     
         else:
             print('Empty bag!')
             print('[Enter] to return')
-            while True:
-                code = input()
-                if code == '':
-                    break
+            pressEnter(self.game.clear)
     
         self.itemsChecked = True
 
@@ -184,6 +185,10 @@ class Hero:
         for item_type, item_data in items.items():
             if item in item_data:
                 self.life += item_data[item]["hp"]
+                
+                if self.life > self.levels[self.level]['life']:
+                    self.life = self.levels[self.level]['life']
+                    
                 print(f"+{item_data[item]['hp']} HP")
                 if self.items[item] == 0:
                     del self.items[item]  # Remova o item do inventário após o uso
@@ -227,7 +232,7 @@ class Boss:
     bosses = {
         'knight': {
             'life': 30,
-            'damage': 8,
+            'damage': 10,
             'armor': 10,
             'actions': {}
         }
@@ -254,7 +259,7 @@ class Boss:
         damage = int(self.game.boss.damage/2)
         self.game.hero.life -= damage
         self.game.boss.armor += 4
-        act = f"{self.name} uses Shield Bash! -{damage}HP\n- armor increased!"
+        act = f"{self.name} uses Shield Bash! -{damage}HP\n- {self.name} armor increased!"
         self.game.lastActions.append(act)
         pass
     
@@ -340,7 +345,7 @@ class Game:
         name = getHeroName("Your name is: ")
         if name == '':
             name = 'Hero'
-        self.hero = Hero(name)
+        self.hero = Hero(name, self)
         print()
         print("Press [enter] to begin")
         pressEnter(self.parts[self.part])
@@ -461,12 +466,12 @@ class Game:
         else:
             damage = int((self.monster.damage - self.hero.armor*0.10))
             self.hero.life -= damage
-            self.lastActions.append(f'{self.monster.name} Attacked! -{damage}')
+            self.lastActions.append(f'{self.monster.name} Attacked! -{damage}HP')
     
     # >> All player actions << #
     def heroAttack(self):
         damage = int(self.hero.damage - self.monster.armor*0.10)
-        self.lastActions.append(f'{self.hero.name} Attacked! -{damage}')
+        self.lastActions.append(f'{self.hero.name} Attacked! -{damage}HP')
         if self.inBoss:
             self.boss.life -= damage
         else:
@@ -628,10 +633,11 @@ class Game:
     def partOne(self):
         self.clear()
         print()
-        print("- After wake up and recover your sights")
-        print("- You hear noises coming from behind a rock...")
+        print("- After you recover your sight, you find yourself in a dimly lit cavern.")
+        print("- The air is thick with an eerie silence, broken only by the occasional drip of water.")
+        print("- As you cautiously move forward, you hear strange noises echoing from behind a large rock.")
         print()
-        print('Press [enter] to continue')
+        print('Press [enter] to continue...')
         pressEnter(self.clear)
         self.printMenu()
         self.createLevel()
@@ -640,14 +646,26 @@ class Game:
         self.clear()
         if self.monster.life <= 0:
             print()
-            print(f'- After killing the {self.monster.name}')
-            print('- you found an strange object in the body...')
-            print('- you have found a lifegem!')
+            print(f'- After defeating the {self.monster.name}, you notice an unusual item within its remains.')
+            print('- You have discovered a lifegem!')
             self.hero.items['lifegem'] = 1
+            
         print()
-        print("- nice! you have killed your first monster")
-        print("- Lets continue exploring the cave...")
+        print("- After this battle, you feel a strange power growing inside you")
+        print("- the feeling of confusion lost space to the will to fight")
         
+        print()
+        pressEnter(self.clear)
+        
+        print("- The adrenaline from the battle begins to subside\nand you take a moment to survey your surroundings.")
+        print()
+        pressEnter(self.clear)
+        
+        print("- The cavern seems to extend further into the darkness\nand an ominous feeling lingers in the air.")
+        print()
+        pressEnter(self.clear)
+        
+        print("- You sense that more challenges lie ahead\nand your newfound lifegem pulses with an unknown energy.")
         print()
         print('Press [enter] to continue')
         pressEnter(self.clear)
@@ -656,11 +674,21 @@ class Game:
     
     def partThree(self):
         self.clear()
-        print(f'- After killing the {self.monster.name}')
-        print('- you found an strange object in the body...')
-        print('- you have found a lifegem!')
-        self.hero.items['lifegem'] += 1
+        if self.monster.life <= 0:
+            print(f'- After vanquishing the {self.monster.name}\nyou discover an unusual object in its remains.')
+            print()
+            pressEnter(self.clear)
+            print('- Another lifegem! The power within you grows stronger.')
+            self.hero.items['lifegem'] += 1
+            pressEnter(self.clear)
+        
         print()
+        print('- As you stand amidst the remnants of the battle\na mysterious voice echoes in your mind.')
+        print('"The path ahead is treacherous, and only the resilient shall prevail."')
+        print()
+        pressEnter(self.clear)
+        
+        print('- Determination fills your heart as you press on into the unknown.')
         print('Press [enter] to continue')
         pressEnter(self.clear)
         self.printMenu()
