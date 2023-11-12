@@ -634,7 +634,6 @@ class Game:
     # ==> STAGE FUNCTIONS <== #
     def partOne(self):
         self.clear()
-        print()
         print("- After you recover your sight, you find yourself in a dimly lit cavern.")
         print("- The air is thick with an eerie silence, broken only by the occasional drip of water.")
         print("- As you cautiously move forward, you hear strange noises echoing from behind a large rock.")
@@ -647,12 +646,10 @@ class Game:
     def partTwo(self):
         self.clear()
         if self.monster.life <= 0:
-            print()
             print(f'- After defeating the {self.monster.name}, you notice an unusual item within its remains.')
             print('- You have discovered a lifegem!')
             self.hero.items['lifegem'] = 1
             
-        print()
         print("- After this battle, you feel a strange power growing inside you")
         print("- the feeling of confusion lost space to the will to fight")
         
@@ -684,7 +681,6 @@ class Game:
             self.hero.items['lifegem'] += 1
             pressEnter(self.clear)
         
-        print()
         print('- As you stand amidst the remnants of the battle\na mysterious voice echoes in your mind.')
         print('"The path ahead is treacherous, and only the resilient shall prevail."')
         print()
@@ -698,7 +694,6 @@ class Game:
     
     def bossFight(self):
         self.clear()
-        print()
         print("- A foreboding presence fills the air as you enter a vast cavern.")
         print("- At the heart of the cavern, a monstrous figure emerges from the shadows.")
         print()
