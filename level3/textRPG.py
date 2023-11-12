@@ -38,9 +38,9 @@ monsters = {
     ''', 
     'goblin': '''
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣶⣿⣿⣶⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣷⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+       ⠀⠀⠀⠀⣠⣾⣿⣿⣿⣿⣿⣿⣷⣄
           ⢀⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢧⡀⠀⠀⠀⠀⠀⠀⠀⠀
-⠀⠢⣤⣀⡀⠀⠀⠀⢿⣧⣄⡉⠻⢿⣿⣿⡿⠟⢉⣠⣼⡿⠀⠀⠀⠀⣀⣤⠔⠀
+ ⠢⣤⣀⡀⠀⠀⠀⢿⣧⣄⡉⠻⢿⣿⣿⡿⠟⢉⣠⣼⡿⠀⠀⠀⠀⣀⣤⠔⠀
 ⠀⠀⠈⢻⣿⣶⠀⣷⠀⠉⠛⠿⠶⡴⢿⡿⢦⠶⠿⠛⠉⠀⣾⠀⣶⣿⡟⠁⠀⠀
 ⠀⠀⠀⠀⠻⣿⡆⠘⡇⠘⠷⠠⠦⠀⣾⣷⠀⠴⠄⠾⠃⢸⠃⢰⣿⠟⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠋⢠⣾⣥⣴⣶⣶⣆⠘⣿⣿⠃⣰⣶⣶⣦⣬⣷⡄⠙⠀⠀⠀⠀⠀
@@ -65,7 +65,7 @@ monsters = {
 ⠀⠀⣾⡿⠿⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣶⣶⣿⣿⣿⣿⣷⣄⠀⠀
 ⠀⢀⣼⡀⠀⠀⠈⠹⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⠃⠀
     ''',
-    'knight': '''
+    'guardian': '''
             {}
            .--.
          ./.--.\.
@@ -202,9 +202,9 @@ class Monster:
     levels = {
         'beginner': {
             'names': ['slime', 'goblin', 'rat'],
-            'life': 10,
-            'damage': 5,
-            'armor': 3
+            'life': 12,
+            'damage': 6,
+            'armor': 4
         },
         'medium': {
             'names': ['big slime', 'skeleton', 'thief'],
@@ -230,8 +230,8 @@ class Monster:
 
 class Boss:
     bosses = {
-        'knight': {
-            'life': 30,
+        'guardian': {
+            'life': 35,
             'damage': 10,
             'armor': 10,
             'actions': {}
@@ -247,7 +247,7 @@ class Boss:
         self.game = game
         
     def setActions(self, name):
-        if name == 'knight':
+        if name == 'guardian':
             self.addActions('shieldbash', self.shieldbash)
             self.addActions('punch', self.punch)
             self.addActions('defense', self.defense)
@@ -424,7 +424,7 @@ class Game:
         print(f'- A {self.monster.name} appears!')
     
     def createBoss(self):
-        self.boss = Boss('knight', self)
+        self.boss = Boss('guardian', self)
         self.monster = self.boss
     # ============================== #
     
@@ -532,7 +532,7 @@ class Game:
         print()
     
     def showBoss(self):
-        print(f" {self.boss.name} ".center(26, '='))
+        print(f" {self.boss.name.capitalize()} ".center(26, '='))
         name = self.boss.name.capitalize()
         hp = self.boss.life
         damage = self.boss.damage
@@ -543,12 +543,14 @@ class Game:
         padShield = f'{icons["shield"]}  {int(armor)}'.center(4)
         stats = f'{padHeart} {padSword} {padShield}'
         print(stats.center(29, ' '))
+        print("=".center(26, '='))
         print()
         print(monsters[self.boss.name])
         
+        
     def showMonster(self):
         if self.monster.name in monsters:
-            print(monsters[self.monster.name].ljust(30, ' '))
+            print(monsters[self.monster.name].center(30, ' '))
     
     def showWinMessage(self):
         self.clear()
@@ -696,6 +698,17 @@ class Game:
     
     def bossFight(self):
         self.clear()
+        print()
+        print("- A foreboding presence fills the air as you enter a vast cavern.")
+        print("- At the heart of the cavern, a monstrous figure emerges from the shadows.")
+        print()
+        pressEnter(self.clear)
+        
+        print("- It's the Cave Guardian, a formidable foe guarding the depths of this mysterious place.")
+        print("- The cavern trembles as the Guardian sets its sights on you, ready for a battle to the death.")
+        print()
+        print('Press [enter] to continue')
+        pressEnter(self.clear)
         self.printMenu()
         self.createBossLevel()
     # <=====================> #
