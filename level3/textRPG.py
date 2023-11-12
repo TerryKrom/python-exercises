@@ -631,7 +631,7 @@ class Game:
         print("- After wake up and recover your sights")
         print("- You hear noises coming from behind a rock...")
         print()
-        print('Press [enter} to continue')
+        print('Press [enter] to continue')
         pressEnter(self.clear)
         self.printMenu()
         self.createLevel()
@@ -649,7 +649,7 @@ class Game:
         print("- Lets continue exploring the cave...")
         
         print()
-        print('Press [enter} to continue')
+        print('Press [enter] to continue')
         pressEnter(self.clear)
         self.printMenu()
         self.createLevel()
@@ -661,7 +661,7 @@ class Game:
         print('- you have found a lifegem!')
         self.hero.items['lifegem'] += 1
         print()
-        print('Press [enter} to continue')
+        print('Press [enter] to continue')
         pressEnter(self.clear)
         self.printMenu()
         self.createLevel()
